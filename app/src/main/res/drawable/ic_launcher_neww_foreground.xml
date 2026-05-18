@@ -1,0 +1,50 @@
+<!--
+  ~ Copyright (C) 2026 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+  <group android:scaleX="0.4888889"
+      android:scaleY="0.4888889"
+      android:translateX="130.84445"
+      android:translateY="130.84445">
+    <path
+        android:pathData="M95,0L417,0A95,95 0,0 1,512 95L512,417A95,95 0,0 1,417 512L95,512A95,95 0,0 1,0 417L0,95A95,95 0,0 1,95 0z">
+      <aapt:attr name="android:fillColor">
+        <gradient
+            android:centerX="256"
+            android:centerY="256"
+            android:gradientRadius="350.57"
+            android:type="radial">
+          <item android:offset="0" android:color="#FF008BE1"/>
+          <item android:offset="0.5" android:color="#FF006EF0"/>
+          <item android:offset="1" android:color="#FF0051FF"/>
+        </gradient>
+      </aapt:attr>
+    </path>
+    <path
+        android:pathData="M320.33,232.52C320.33,225.17 314.37,219.2 307.01,219.2H169.81C162.45,219.2 156.49,225.17 156.49,232.52C156.49,239.88 162.45,245.84 169.81,245.84H307.01C314.37,245.84 320.33,239.88 320.33,232.52ZM169.81,272.48C162.45,272.48 156.49,278.45 156.49,285.8C156.49,293.16 162.45,299.13 169.81,299.13H253.14C260.49,299.13 266.46,293.16 266.46,285.8C266.46,278.45 260.49,272.48 253.14,272.48H169.81Z"
+        android:fillColor="#ffffff"/>
+    <path
+        android:pathData="M201.11,400.36H156.56C141.88,400.36 129.92,388.41 129.92,373.72V139.28C129.92,124.59 141.88,112.64 156.56,112.64H320.33C335.02,112.64 346.97,124.59 346.97,139.28V221.2C346.97,228.56 352.93,234.52 360.29,234.52C367.65,234.52 373.61,228.56 373.61,221.2V139.28C373.61,109.9 349.71,86 320.33,86H156.56C127.18,86 103.28,109.9 103.28,139.28V373.72C103.28,403.1 127.18,427 156.56,427H201.11C208.47,427 214.43,421.04 214.43,413.68C214.43,406.32 208.47,400.36 201.11,400.36Z"
+        android:fillColor="#ffffff"/>
+    <path
+        android:pathData="M397.2,278.86C381.62,263.28 356.27,263.28 340.7,278.85L267.57,351.82C266.02,353.37 264.87,355.28 264.23,357.38L248.31,409.81C247.62,412.09 247.55,414.52 248.11,416.83C248.68,419.15 249.85,421.27 251.52,422.98C253.18,424.69 255.28,425.92 257.58,426.54C259.88,427.16 262.31,427.15 264.61,426.52L318.37,411.62C320.59,411.01 322.6,409.84 324.23,408.21L397.21,335.37C412.79,319.79 412.79,294.44 397.2,278.86ZM307.89,386.89L280.84,394.38L288.75,368.32L338.1,319.08L356.94,337.92L307.89,386.89ZM378.38,316.53L375.8,319.1L356.96,300.27L359.53,297.7C364.72,292.51 373.17,292.51 378.37,297.7C383.56,302.89 383.56,311.34 378.38,316.53ZM307.01,165.92H169.81C162.45,165.92 156.49,171.88 156.49,179.24C156.49,186.6 162.45,192.56 169.81,192.56H307.01C314.37,192.56 320.33,186.6 320.33,179.24C320.33,171.88 314.37,165.92 307.01,165.92Z"
+        android:fillColor="#ffffff"/>
+  </group>
+</vector>
