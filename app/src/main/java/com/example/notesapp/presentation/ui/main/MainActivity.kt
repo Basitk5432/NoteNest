@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                     is CategoryState.Success -> {
                         binding.progressBar.visibility = View.GONE
                         categories.clear()
-                        categories.addAll(state.categories)
+                        categories.addAll(state.categories.sortedByDescending { it.createdAt })
                         categoryAdapter.notifyDataSetChanged()
                         binding.tvEmpty.visibility =
                             if (state.categories.isEmpty()) View.VISIBLE else View.GONE

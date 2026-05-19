@@ -54,6 +54,7 @@ class NotesRepositoryImpl(
 
 
     override suspend fun addNote(note: Note): Result<String> = runCatching {
+        // Check if note title already exists in this category
         val existing = userDoc
             .collection("categories")
             .document(note.categoryId)
