@@ -58,10 +58,10 @@ class NotesViewModel(
         }
     }
 
-    fun deleteNote(noteId: String) {
+    fun deleteNote(noteId: String, categoryId: String) {
         viewModelScope.launch {
             _actionState.value = ActionState.Loading
-            val result = deleteNoteUseCase(noteId)
+            val result = deleteNoteUseCase(noteId, categoryId)
             _actionState.value = result.fold(
                 onSuccess = { ActionState.Success },
                 onFailure = { ActionState.Error(it.message ?: "Failed to delete note") }

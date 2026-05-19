@@ -32,9 +32,9 @@ class AuthRepositoryImpl(
             .setDisplayName(name).build()
         result.user!!.updateProfile(profileUpdates).await()
 
-        // Save user info to Firestore with both UID and Email
+        // Use EMAIL as document ID instead of UID
         db.collection("users")
-            .document(result.user!!.uid)
+            .document(email)           // ← email as document ID
             .set(
                 User(
                     uid = result.user!!.uid,
@@ -51,9 +51,9 @@ class AuthRepositoryImpl(
             val credential = GoogleAuthProvider.getCredential(idToken, null)
             val result = auth.signInWithCredential(credential).await()
 
-            // Save user info to Firestore with both UID and Email
+            // Use EMAIL as document ID
             db.collection("users")
-                .document(result.user!!.uid)
+                .document(result.user!!.email ?: result.user!!.uid)
                 .set(
                     User(
                         uid = result.user!!.uid,

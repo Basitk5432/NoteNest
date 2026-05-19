@@ -33,7 +33,10 @@ val appModule = module {
 
     factory<NotesRepository> {
         val auth = get<FirebaseAuth>()
-        val userId = auth.currentUser?.uid ?: ""
+        // Use EMAIL instead of UID
+        val userId = auth.currentUser?.email
+            ?: auth.currentUser?.uid
+            ?: ""
         NotesRepositoryImpl(db = get(), userId = userId)
     }
 

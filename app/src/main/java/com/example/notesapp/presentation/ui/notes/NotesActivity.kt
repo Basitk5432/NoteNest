@@ -79,7 +79,7 @@ class NotesActivity : AppCompatActivity() {
                     }
                 )
             },
-            onNoteDelete = { note -> viewModel.deleteNote(note.id) }
+            onNoteDelete = { note -> viewModel.deleteNote(note.id, categoryId) }
         )
         binding.rvNotes.apply {
             layoutManager = LinearLayoutManager(this@NotesActivity)
