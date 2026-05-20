@@ -7,33 +7,55 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notesapp.data.model.Category
 import com.example.notesapp.databinding.ItemCategoryBinding
-import androidx.core.graphics.toColorInt
 
 class CategoryAdapter(
     private val items: List<Category>,
     private val onCategoryClick: (Category) -> Unit,
-    private val onCategoryDelete: (Category) -> Unit
+    private val onCategoryDelete: (Category) -> Unit,
+    private val onCategoryArchive: (Category) -> Unit,
+    private val onCategoryRename: (Category) -> Unit
 ) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ViewHolder(ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        ViewHolder(
+            ItemCategoryBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val category = items[position]
         holder.binding.apply {
             tvCategoryName.text = category.name
             tvInitial.text = category.name.first().uppercaseChar().toString()
-            cardView.setCardBackgroundColor(category.color.toColorInt())
+            cardView.setCardBackgroundColor(Color.parseColor(category.color))
+
             root.setOnClickListener { onCategoryClick(category) }
+
             root.setOnLongClickListener {
+                // Show options dialog
+                val options = arrayOf("Rename", "Archive", "Delete")
                 AlertDialog.Builder(root.context)
-                    .setTitle("Delete category")
-                    .setMessage("Delete \"${category.name}\" and all its notes?")
-                    .setPositiveButton("Delete") { _, _ -> onCategoryDelete(category) }
-                    .setNegativeButton("Cancel", null)
+                    .setTitle(category.name)
+                    .setItems(options) { _, which ->
+                        when (which) {
+                            0 -> onCategoryRename(category)
+                            1 -> onCategoryArchive(category)
+                            2 -> {
+                                AlertDialog.Builder(root.context)
+                                    .setTitle("Delete category")
+                                    .setMessage("Delete \"${category.name}\" and all its notes?")
+                                    .setPositiveButton("Delete") { _, _ ->
+                                        onCategoryDelete(category)
+                                    }
+                                    .setNegativeButton("Cancel", null)
+                                    .show()
+                            }
+                        }
+                    }
                     .show()
                 true
             }

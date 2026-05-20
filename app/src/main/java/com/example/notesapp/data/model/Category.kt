@@ -5,5 +5,6 @@ data class Category(
     val name: String = "",
     val color: String = "#6750A4",
     val userId: String = "",
-    val createdAt: Long = System.currentTimeMillis()
+    val createdAt: Long = System.currentTimeMillis(),
+    val isArchived: Boolean = false    // ← new field
 )
